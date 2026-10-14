@@ -58,6 +58,12 @@ class Poetry(Performance):  # Shared parent: hierarchical inheritance.
 class ShortDance(Dance):  # Performance -> Dance -> ShortDance: multilevel.
     def duration(self):
         return super().duration() // 2  # Extend a parent's implementation.
+class LightningDance(ShortDance):
+    def duration(self):
+        return max(1,super().duration() - 1)
+lightning =LightningDance("Mukono Lightning Crew")
+print(lightning.duration())
+print(lightning.describe())
 
 
 # ACT 3: One extra capability joins the existing dance family.
